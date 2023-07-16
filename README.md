@@ -10,7 +10,7 @@
 
 format.pyはダウンロードした生データ(standings-section.html)からstandings.jsonを作るためのコードなので必要ありません。
 
-vis.pyの4行目のTeamNameを変更してご利用下さい。
+vis.pyの4行目のTeamNameを変更してvis.pyを実行すると、グラフが表示されます。
 
 # 後記
 コードの中身を理解したい場合、何らかの手段で連絡をもらえれば、余裕があれば答えます。
