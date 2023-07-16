@@ -11,6 +11,7 @@
 format.pyはダウンロードした生データ(standings-section.html)からstandings.jsonを作るためのコードなので必要ありません。
 
 vis.pyの4行目のTeamNameを変更してvis.pyを実行すると、グラフが表示されます。
+
 ACが0のチームは除外してます。ごめんね
 
 # 後記
