@@ -1,7 +1,7 @@
 from load_standing import Standings
 import matplotlib.pyplot as plt
 Standing = Standings()
-TeamName = 'AC_noko'
+TeamName = 'KSS908111314'
 if not Standing.exist_team(TeamName):
     raise ValueError
 x = []
