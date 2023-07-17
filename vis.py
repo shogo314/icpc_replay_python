@@ -24,7 +24,7 @@ ax.plot(x, y, '-')
 for sx, sy in zip(solve_x, solve_y):
     ax.annotate(str(sy), (sx, sy), textcoords="offset points",
                 xytext=(0, 10), ha='center')
-ax.set_xlabel('経過時間（秒）', fontname="MS Gothic")
-ax.set_ylabel('順位', fontname="MS Gothic")
+ax.set_xlabel('elapsed time (s)')
+ax.set_ylabel('rank')
 ax.set_title(TeamName)
 plt.show()
