@@ -4,13 +4,13 @@ from typing import *
 class Standings:
     def __init__(self) -> None:
         import json
-        with open('standings.json', 'r', encoding='utf-8') as f:
+        with open('standings_2023_yokohama.json', 'r', encoding='utf-8') as f:
             d = json.load(f)
         self.val: dict[str, list[tuple[Optional[int], int]]] = {}
         for e in d['StandingsData']:
             TeamName = e['TeamName']
             self.val[TeamName]: list[tuple[Optional[int], int]] = []
-            for c in 'ABCDEFGH':
+            for c in 'ABCDEFGHIJK':
                 if e['TaskResults'][c]['Elapsed'] == '-':
                     Elapsed = None
                 else:

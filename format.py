@@ -1,6 +1,6 @@
 # htmlから適当に抜き出したものを気合いでフォーマットするコード
 import json
-with open('standings-section.html', 'r', encoding='utf-8') as f:
+with open('standings-section_2023_yokohama.html', 'r', encoding='utf-8') as f:
     html_content = [l.strip() for l in f.readlines()]
 i = 2
 d = {'StandingsData': []}
@@ -59,7 +59,7 @@ while True:
     assert html_content[i][:27] == '<div class="team-problems">'
     i += 1
     e['TaskResults'] = {}
-    for c in 'ABCDEFGH':
+    for c in 'ABCDEFGHIJK':
         e['TaskResults'][c] = {}
         assert html_content[i] == '<div class="team-col team-problem">'
         i += 1
@@ -94,10 +94,13 @@ while True:
                 exit(1)
         assert html_content[i] == '</div>'
         i += 1
+    print(e)
     for _ in range(4):
         # print(html_content[i])
         assert html_content[i] == '</div>'
         i += 1
     d['StandingsData'].append(e)
-with open('standings.json', 'w', encoding='utf-8') as f:
+    if e['Rank']==58:
+        break
+with open('standings_2023_yokohama.json', 'w', encoding='utf-8') as f:
     json.dump(d, f, indent=2, ensure_ascii=False)

@@ -9,14 +9,14 @@ y = []
 score = 0
 solve_x = []
 solve_y = []
-for i in range(0, 3*60*60+1):
+for i in range(0, 5*60+1):
     x.append(i)
     y.append(Standing.time_rank(i, TeamName))
     if Standing._time_result(i, TeamName)[0] > score:
         score = Standing._time_result(i, TeamName)[0]
         solve_x.append(x[-1])
         solve_y.append(y[-1])
-    print('\r'+'{:.2f}'.format(100*i/(3*60*60))+'%', end='')
+    print('\r'+'{:.2f}'.format(100*i/(5*60))+'%', end='')
 
 fig, ax = plt.subplots()
 ax.invert_yaxis()
@@ -24,7 +24,7 @@ ax.plot(x, y, '-')
 for sx, sy in zip(solve_x, solve_y):
     ax.annotate(str(sy), (sx, sy), textcoords="offset points",
                 xytext=(0, 10), ha='center')
-ax.set_xlabel('elapsed time (s)')
+ax.set_xlabel('elapsed time (m)')
 ax.set_ylabel('rank')
 ax.set_title(TeamName)
 plt.show()
