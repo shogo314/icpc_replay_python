@@ -38,7 +38,7 @@ class Standings:
             else:
                 score += 1
                 penalty += Elapsed
-                penalty += Penalty*1200
+                penalty += Penalty*20
         return (score, penalty)
 
     def time_rank(self, tm, team_name) -> int:
